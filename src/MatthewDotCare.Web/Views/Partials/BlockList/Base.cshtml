@@ -1,0 +1,7 @@
+@model IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@foreach (var item in Model)
+{
+    var path = item.Content.ContentType.Alias.Replace("element", "");
+    <partial name="@path" model="item" />
+}
