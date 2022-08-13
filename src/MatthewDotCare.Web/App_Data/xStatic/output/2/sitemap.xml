@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.siteMaps.org/schemas/siteMap/0.9">
+  <url>
+    <loc>https://matthew.care/</loc>
+    <lastmod>2022-08-13T13:12:02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://matthew.care/privacy-policy</loc>
+    <lastmod>2022-08-13T13:02:19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

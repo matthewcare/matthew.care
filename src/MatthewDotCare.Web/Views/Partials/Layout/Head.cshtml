@@ -1,0 +1,51 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http.Extensions
+@inherits UmbracoViewPage<ICompositionBasePage>
+@{
+	var outerTemplate = Model.GetOuterTemplate();
+	var pageTitleOrDefault = Model.PageTitleOrDefault();
+	var absolutePageUrl = Model.Url(mode: UrlMode.Absolute);
+	var ogMedia = Model.SeoOgMetaImage ?? outerTemplate.BaseOgMetaImage;
+	var ogMediaUrl = ogMedia!.Content.Url(mode: UrlMode.Absolute).GetCropUrl(ogMedia.LocalCrops, cropAlias: "preview", useCropDimensions: true);
+}
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<title>@Model.SeoTitle.IfNullOrWhiteSpace(pageTitleOrDefault + outerTemplate.HtmlTitleAppendage)</title>
+	<meta property="og:title" content="@Model.SeoTitle.IfNullOrWhiteSpace(pageTitleOrDefault + outerTemplate.HtmlTitleAppendage)" />
+	<meta property="og:locale" content="@CultureInfo.CurrentCulture.Name" />
+	<meta property="og:site_name" content="@outerTemplate.SiteName" />
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="@Model.SeoDescription" />
+	<meta property="og:url" content="@absolutePageUrl" />
+	@if (!string.IsNullOrWhiteSpace(ogMediaUrl))
+	{
+		<meta property="og:image" content="@ogMediaUrl" />
+	}
+	<meta name="robots" content="@Model.SeoIndexing.IfNullOrWhiteSpace("index,follow")">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,user-scalable=1,viewport-fit=cover">
+	<meta name="description" content="@Model.SeoDescription">
+	@if (!string.IsNullOrWhiteSpace(outerTemplate.TwitterScreenName))
+	{
+	    <meta name="twitter:site" content="@outerTemplate.TwitterScreenName.EnsureStartsWith('@')">
+	    <meta name="twitter:creator" content="@outerTemplate.TwitterScreenName.EnsureStartsWith('@')">
+	}
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="@pageTitleOrDefault">
+	<meta name="twitter:description" content="@Model.SeoDescription">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="canonical" href="@absolutePageUrl" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#00ab65">
+	<link rel="shortcut icon" href="/favicons/favicon.ico">
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="https://www.google-analytics.com">
+	<include-css src="/style.css" />
+	<render-css />
+</head>
