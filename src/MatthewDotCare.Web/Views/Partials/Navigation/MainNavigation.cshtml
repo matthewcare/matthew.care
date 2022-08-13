@@ -1,0 +1,13 @@
+﻿@inherits UmbracoViewPage
+@{
+    var homePage = Model.GetHomePage();
+}
+
+<ul>
+    @foreach (var item in homePage.Children<ICompositionBasePage>())
+    {
+        <li>
+            <a href="@item.Url()">@item.PageTitleOrDefault()</a>
+        </li>
+    }
+</ul>

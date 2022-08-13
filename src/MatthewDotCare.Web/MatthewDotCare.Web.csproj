@@ -21,16 +21,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\MatthewDotCare.Contracts\MatthewDotCare.Contracts.csproj" />
+    <ProjectReference Include="..\MatthewDotCare.Umbraco\MatthewDotCare.Umbraco.csproj" />
     <ProjectReference Include="..\MatthewDotCare.Xstatic\MatthewDotCare.XStatic.csproj" />
   </ItemGroup>
 
   <!-- Keep this as false if ModelsBuilder mode is InMemoryAuto -->
   <PropertyGroup>
-    <RazorCompileOnBuild>false</RazorCompileOnBuild>
-    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+	  <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
+
 </Project>
