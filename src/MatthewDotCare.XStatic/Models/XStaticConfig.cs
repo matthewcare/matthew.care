@@ -1,0 +1,17 @@
+﻿namespace MatthewDotCare.XStatic.Models
+{
+    public class XStaticConfig
+    {
+        public IEnumerable<DeployerModel> Deployers { get; set; }
+
+        public IEnumerable<ExportTypeModel> ExportTypes { get; set; }
+
+        public List<TypeModel> Generators { get; set; }
+
+        public List<TypeModel> TransformerFactories { get; set; }
+
+        public List<TypeModel> FileNameGenerators { get; set; }
+
+        public List<ConfigurableTypeModel> PostGenerationActions { get; set; }
+    }
+}
