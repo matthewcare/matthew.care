@@ -1,0 +1,12 @@
+#NPM
+/node_modules
+
+#Generated
+/dist
+/docs/jsdoc
+/docs/sassdoc
+/reports
+
+#Other
+.vscode
+.DS_Store

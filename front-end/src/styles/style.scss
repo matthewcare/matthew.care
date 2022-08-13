@@ -1,0 +1,46 @@
+/*
+*	Files in the "uikit" folder are not to be changed
+*	and are there for reference only i.e to find variable
+*	names, or extra hooks if they aren't listed in the
+*	"theme" folder.
+*
+*	The "theme" folder is where you will use the available
+*	hooks to make any changes which aren't able to be changed
+*	by overriding the defined variables.
+*
+*	Any custom code should be separated into components, and
+*	saved within the "components" folder
+*/
+
+// 1.
+// Your custom variables and variable overwrites.
+$global-gutter: 8px;
+$global-medium-gutter: 20px;
+$breakpoint-small: 640px;
+$breakpoint-medium: 960px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1600px;
+
+// 2.
+// Default variables - don't change anything within
+// the file. Defining the variables in section 1 will
+// override anything defined in the file.
+@import 'uikit/variables';
+
+// 3.
+// Your theme with any overridden mixin definitions
+// Note, adding new classes (where applicable) should
+// also be added to a mixin. e.g adding a new class to
+// change font colour should go in the "text" misc mixin
+// and conform to convention like "uk-text-tomato"
+@import 'theme/import';
+
+// 4.
+// Default uikit. Don't change anything with this file
+@import 'uikit/uikit';
+
+// 5.
+// Any custom styles which aren't relevant to a
+// specific mixin.  Put those in files in the
+// "components" folder.
+//@import 'components/custom-component';
