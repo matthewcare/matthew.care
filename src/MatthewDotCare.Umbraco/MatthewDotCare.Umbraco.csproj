@@ -17,6 +17,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Extensions\" />
+	  <Folder Include="DocumentTypes\" />
+	  <Folder Include="Handlers\" />
+	  <Folder Include="PictureElement\Models\" />
+	  <Folder Include="TagHelpers\" />
 	  <Folder Include="ViewContent\" />
 	</ItemGroup>
 
