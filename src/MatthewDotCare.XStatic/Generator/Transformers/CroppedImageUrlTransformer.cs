@@ -28,21 +28,24 @@ namespace MatthewDotCare.XStatic.Generator.Transformers
 
             foreach (var crop in _crops)
             {
-                var imagesRegex = new Regex($"(?:['\"(])/media/((?=.*width={crop.Width})(?=.*height={crop.Height})).*(?:['\")])");
-                updatedMarkup = imagesRegex.Replace(updatedMarkup, (match) =>
+                var imagesRegex = new Regex($"/media/.*(width={crop.Width}).*(height={crop.Height})");
+
+                var matches = imagesRegex.Matches(updatedMarkup);
+
+                foreach(Match match in matches)
                 {
                     var str = match.ToString();
 
                     var partialPath = str.Split('?').First().Trim('\'', '\"');
-
-                    var fileName = Path.GetFileName(partialPath);
                     var fileExtension = Path.GetExtension(partialPath);
-                    var pathSegment = partialPath.Replace(fileName, string.Empty);
 
-                    var newName = _imageCropNameGenerator.GetCropFileName(Path.GetFileNameWithoutExtension(partialPath), crop);
+                    var fileName = Path.GetFileName(str);
+                    var newName = _imageCropNameGenerator.GetCropFileName(Path.GetFileNameWithoutExtension(str), crop);
+                    
+                    var newPartialPath = newName.Split('?').First().Trim('\'', '\"');
 
-                    return str.Replace(fileName, newName + fileExtension);
-                });
+                    updatedMarkup = updatedMarkup.Replace(fileName, newPartialPath + fileExtension);
+                }
             }
 
             return updatedMarkup;
