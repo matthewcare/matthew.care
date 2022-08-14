@@ -16,7 +16,7 @@ namespace MatthewDotCare.XStatic.Generator
 {
     public abstract class GeneratorBase : IGenerator
     {
-        protected readonly string[] ResizeExtensions = new[] { "jpg", "jpeg", "png", "gif" };
+        protected readonly string[] ResizeExtensions = new[] { "jpg", "jpeg", "png", "gif", "webp" };
 
         protected static readonly Encoding DefaultEncoder = Encoding.UTF8;
 
