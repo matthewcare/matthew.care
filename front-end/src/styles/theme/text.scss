@@ -18,7 +18,11 @@ $text-meta-link-hover-color:                     $global-color !default;
 // Style modifiers
 // ========================================================================
 
-// @mixin hook-text-lead(){}
+@mixin hook-text-lead(){
+	@media (min-width: $breakpoint-medium) {
+		font-size: $text-lead-font-size-m;
+	}
+}
 
 
 

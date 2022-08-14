@@ -26,6 +26,10 @@
     <ProjectReference Include="..\MatthewDotCare.Xstatic\MatthewDotCare.XStatic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Partials\Navigation\" />
+  </ItemGroup>
+
   <!-- Keep this as false if ModelsBuilder mode is InMemoryAuto -->
   <PropertyGroup>
 	  <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>

@@ -45,6 +45,8 @@ module.exports = {
 
 	// Static html view path
   	viewsDir: path.join(folderNames.src, folderNames.views),
-	partialsHtmlDir: path.join(folderNames.src, folderNames.partials)
+	partialsHtmlDir: path.join(folderNames.src, folderNames.partials),
+
+	productionDir: '../src/MatthewDotCare.Web/wwwroot/dist'
 
 };

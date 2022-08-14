@@ -19,11 +19,12 @@ const config = require('./config');
 // =============================================================================
 
 module.exports = {
-    content: ['./*.html', `${config.viewsDir}/**/*.html`, `${config.distDir}/**/*.js`],
+    content: ['./*.html', `${config.viewsDir}/**/*.html`],
     css: [`${config.distDir}/**/*.css`],
     // Add any you may need to this list
     safelist: {
         greedy: [/^uk-icon/]
     },
+    keyframes: true,
     defaultExtractor: content => content.match(/[A-z0-9-:\/@]+/g) || []
 };

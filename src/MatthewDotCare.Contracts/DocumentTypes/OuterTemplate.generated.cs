@@ -66,6 +66,14 @@ namespace MatthewDotCare.Contracts.DocumentTypes
 		public virtual string HtmlTitleAppendage => this.Value<string>(_publishedValueFallback, "htmlTitleAppendage");
 
 		///<summary>
+		/// Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("navigation")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Navigation => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "navigation");
+
+		///<summary>
 		/// Robots
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
