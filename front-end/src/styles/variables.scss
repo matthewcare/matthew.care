@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@function rem($target) {
+  @return math.div($target, 16) * 1rem;
+}
+
+$global-gutter: 8px;
+$global-medium-gutter: 20px;
+$breakpoint-small: 640px;
+$breakpoint-medium: 960px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1600px;
+
+$global-large-font-size: rem(24);
+
+$global-background: #262626;
+$global-color: #E0E0E0;
+$global-emphasis-color: #ffb400;
+$global-primary-background: $global-color;
+$text-lead-color: $global-color;
+
+$icon-button-size: 50px;
+$icon-button-background: $global-emphasis-color;
+$icon-button-color: $global-background;
+$icon-button-hover-background: darken($icon-button-background, 5%);
+$icon-button-hover-color: $global-background;
+$icon-button-active-background: darken($icon-button-background, 10%);
+$icon-button-active-color: $global-color;
+
+$text-lead-font-size: rem(18);
+$text-lead-font-size-m: $global-large-font-size;

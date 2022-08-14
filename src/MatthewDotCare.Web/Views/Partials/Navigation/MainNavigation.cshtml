@@ -1,13 +1,14 @@
-﻿@inherits UmbracoViewPage
+﻿@inherits UmbracoViewPage<IPublishedContent>
+
 @{
-    var homePage = Model.GetHomePage();
+    var ot = Model.GetOuterTemplate();
 }
 
-<ul>
-    @foreach (var item in homePage.Children<ICompositionBasePage>())
-    {
-        <li>
-            <a href="@item.Url()">@item.PageTitleOrDefault()</a>
-        </li>
-    }
-</ul>
+<div class="uk-width-auto@l m-nav uk-text-center uk-text-right@l">
+    <ul class="uk-list uk-list-large">
+        @foreach (var link in ot.Navigation.Select(x => (ElementNavigationItem)x.Content))
+        {
+            <li><a href="@link.Url.Url" class="uk-icon-button" target="@link.Url.Target">@Html.Raw(link.Svg)</a></li>
+        }
+    </ul>
+</div>

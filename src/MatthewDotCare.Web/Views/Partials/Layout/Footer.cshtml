@@ -1,9 +1,0 @@
-﻿@inherits UmbracoViewPage
-@{
-    var home = Model.GetHomePage();
-    var outerTemplate = Model.GetOuterTemplate();
-}
-
-<footer itemscope="" itemtype="https://schema.org/WPFooter">
-    <a href="@home.Url()">@outerTemplate.SiteName</a>
-</footer>
