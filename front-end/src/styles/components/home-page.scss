@@ -11,7 +11,8 @@
 		box-shadow: 0 0 15px rgb(0 0 0 / 90%);
 		display: inline-block;
 		overflow: hidden;
-		max-height: calc(100vh - ($global-margin * 6))
+		max-height: calc(100vh - ($global-margin * 2));
+		position: relative;
 	}
 
 	@media (max-width: $breakpoint-medium-max) {
