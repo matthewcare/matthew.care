@@ -8,7 +8,7 @@
     <ul class="uk-list uk-list-large">
         @foreach (var link in ot.Navigation.Select(x => (ElementNavigationItem)x.Content))
         {
-            <li><a href="@link.Url.Url" class="uk-icon-button" target="@link.Url.Target">@Html.Raw(link.Svg)</a></li>
+            <li><a href="@link.Url.Url" class="uk-icon-button" target="@link.Url.Target">@Html.Raw(link.Svg)<span class="uk-text-a11y">@link.Url.Name</span></a></li>
         }
     </ul>
 </div>
