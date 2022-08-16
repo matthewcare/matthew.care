@@ -74,14 +74,6 @@ namespace MatthewDotCare.Contracts.DocumentTypes
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Navigation => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "navigation");
 
 		///<summary>
-		/// Robots
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("robots")]
-		public virtual string Robots => this.Value<string>(_publishedValueFallback, "robots");
-
-		///<summary>
 		/// Site Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]

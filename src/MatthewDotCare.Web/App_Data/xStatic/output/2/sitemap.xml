@@ -6,10 +6,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://matthew.care/privacy-policy</loc>
-    <lastmod>2022-08-13T13:02:19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>

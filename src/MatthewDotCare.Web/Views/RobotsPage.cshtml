@@ -1,0 +1,7 @@
+﻿@inherits UmbracoViewPage<RobotsPage>
+@{
+    Layout = null;
+    Context.Response.Headers.Remove("Content-type");
+    Context.Response.Headers.Add("Content-type", "text/plain");
+}   
+@Html.Raw(Model.Content)
