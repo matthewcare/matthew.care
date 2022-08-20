@@ -4,11 +4,21 @@
     var ot = Model.GetOuterTemplate();
 }
 
-<div class="uk-width-auto@l m-nav uk-text-center uk-text-right@l">
-    <ul class="uk-list uk-list-large">
-        @foreach (var link in ot.Navigation.Select(x => (ElementNavigationItem)x.Content))
-        {
-            <li><a href="@link.Url.Url" class="uk-icon-button" target="@link.Url.Target">@Html.Raw(link.Svg)<span class="uk-text-a11y">@link.Url.Name</span></a></li>
-        }
-    </ul>
+<div class="uk-container uk-visible@m">
+    <nav class="uk-navbar-container uk-margin uk-navbar">
+        <div class="uk-navbar-left">
+            <a href="/" class="uk-logo uk-navbar-item">@ot.SiteName</a>
+        </div>
+        <div class="uk-navbar-center">
+
+            <ul class="uk-navbar-nav">
+                @foreach (var item in ot.Navigation.Select(x => (ElementNavigationItem)x.Content))
+                {
+                    var active = item.Url.Url == Model.Url();
+                    <li class="@(active ? "uk-active" : null)"><a href="@item.Url.Url" target="@item.Url.Target">@item.Url.Name</a></li>
+                }
+            </ul>
+
+        </div>
+    </nav>
 </div>

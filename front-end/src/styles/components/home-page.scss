@@ -1,9 +1,11 @@
+@use "sass:math";
+
 .m-home-wrapper {
 	display: flex;
-	min-height: 100vh;
-	overflow: hidden;
+	flex-direction: column;
 	padding: $global-margin;
 	box-sizing: border-box;
+	width: 100%;
 
 	picture {
 		margin-left: auto;
@@ -15,19 +17,11 @@
 		position: relative;
 	}
 
-	@media (max-width: $breakpoint-medium-max) {
-		.uk-list {
-			li {
-				display: inline-block;
-			}
-		}
-	}
-
-
 	@media (min-width: $breakpoint-large) {
-
+		min-height: 100vh;
 		align-items: center;
 		padding: $global-margin $global-margin $global-margin ($global-margin * 3);
+		flex-direction: row;
 
 		&:before {
 			background-color: $global-emphasis-color;

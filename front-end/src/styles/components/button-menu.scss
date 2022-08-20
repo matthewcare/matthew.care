@@ -1,0 +1,18 @@
+@use 'sass:math';
+
+@media (max-width: $breakpoint-medium-max) {
+	.m-menu {
+		position: sticky; 
+ 		bottom: 0;
+ 		background: $global-background;
+
+		ul {
+ 			padding-bottom: $global-margin;
+ 			margin: 0;
+      	}
+
+     	li {
+			display: inline-block;
+		}
+	}
+}
