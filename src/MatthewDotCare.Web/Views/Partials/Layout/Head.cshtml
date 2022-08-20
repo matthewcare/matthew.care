@@ -1,11 +1,9 @@
 ﻿@using System.Globalization
-@using Microsoft.AspNetCore.Http.Extensions
 @inherits UmbracoViewPage<ICompositionBasePage>
 @{
     var outerTemplate = Model.GetOuterTemplate();
     var pageTitleOrDefault = Model.PageTitleOrDefault();
     var absolutePageUrl = Model.Url(mode: UrlMode.Absolute);
-    var uriWithQuery = new Uri(Context.Request.GetDisplayUrl());
     var ogMedia = Model.SeoOgMetaImage ?? outerTemplate.BaseOgMetaImage;
     var ogMediaUrl = ogMedia!.Content.Url(mode: UrlMode.Absolute).GetCropUrl(ogMedia.LocalCrops, cropAlias: "preview", useCropDimensions: true);
     var title = Model.SeoTitle.IfNullOrWhiteSpace(pageTitleOrDefault + outerTemplate.HtmlTitleAppendage);
@@ -29,7 +27,7 @@
         <meta name="twitter:creator" content="@outerTemplate.TwitterScreenName.EnsureStartsWith('@')">
     }
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="@pageTitleOrDefault">
+    <meta name="twitter:title" content="@title">
     <meta name="twitter:description" content="@Model.SeoDescription">
     <meta name="msapplication-TileColor" content="#262626">
     <meta name="msapplication-config" content="/dist/static/favicons/browserconfig.xml">
