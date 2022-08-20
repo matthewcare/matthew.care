@@ -1,2 +1,6 @@
 https://matthewcare.netlify.app https://matthew.care 301!
 https://matthewcare.netlify.app/* https://matthew.care/:splat 301!
+https://matthewcare.co.uk/about.html https://matthew.care/web-cv 301!
+https://matthewcare.co.uk/projects.html https://matthew.care/web-cv 301!
+https://matthewcare.co.uk https://matthew.care 301!
+https://matthewcare.co.uk/* https://matthew.care/:splat 301!
