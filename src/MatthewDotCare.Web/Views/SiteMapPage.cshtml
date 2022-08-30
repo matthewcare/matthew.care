@@ -3,28 +3,23 @@
 @inherits UmbracoViewPage<MatthewDotCare.Web.Controllers.SiteMap.SiteMapPageModel>
 
 
-<div class="uk-container">
+<partial name="Partials/Navigation/MainNavigation" />
 
-    <div class="uk-grid">
-        <div class="uk-width-4-5">
-            <h1>@Model.Content.PageTitleOrDefault()</h1>
 
-            <div>
-                <div>
-                    <ul>
-                        @foreach (var url in Model.SiteMap.Urls)
-                        {
-                            RenderSiteMapUrl(url);
-                        }
-                    </ul>
-                </div>
-            </div>
+<div class="uk-container uk-margin">
+    <h1>@Model.Content.PageTitleOrDefault()</h1>
+
+    <div>
+        <div>
+            <ul>
+                @foreach (var url in Model.SiteMap.Urls)
+                {
+                    RenderSiteMapUrl(url);
+                }
+            </ul>
         </div>
-        <div class="uk-width-1-5">
-            <partial name="Navigation/MainNavigation" />
-        </div>
-
     </div>
+
 
 </div>
 

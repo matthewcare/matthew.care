@@ -61,7 +61,7 @@ internal class SiteMapService : ISiteMapService
         var stream = new MemoryStream();
         await using (var writer = XmlWriter.Create(stream, settings))
         {
-            writer.WriteStartElement("urlset", "http://www.siteMaps.org/schemas/siteMap/0.9");
+            writer.WriteStartElement("urlset", "http://www.sitemaps.org/schemas/sitemap/0.9");
 
             WriteUrl(writer, siteMap.Urls);
 
@@ -86,7 +86,7 @@ internal class SiteMapService : ISiteMapService
                 writer.WriteStartElement("url");
 
                 writer.WriteElementString("loc", siteMapUrl.Url);
-                writer.WriteElementString("lastmod", $"{siteMapUrl.LastModified:s}");
+                writer.WriteElementString("lastmod", $"{siteMapUrl.LastModified:yyyy-MM-dd}");
                 writer.WriteElementString("changefreq", changeFrequency);
                 writer.WriteElementString("priority", priority.ToString(CultureInfo.InvariantCulture));
 
