@@ -6,6 +6,17 @@
  		bottom: 0;
  		background: $global-background;
 
+ 		&:before {
+ 			background: linear-gradient(to top, rgba($global-background, 1), rgba($global-background, 0));
+ 			content: '';
+ 			height: 50px;
+ 			left: 0;
+ 			pointer-events: none;
+ 			position: absolute;
+ 			top: -50px;
+ 			width: 100%;
+ 		}
+
 		ul {
  			padding-bottom: $global-margin;
  			margin: 0;

@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<NotFoundPage>
 
-<div>
+<div class="uk-width-2-3@m uk-margin-auto uk-text-center">
+    <h1>@Model.PageTitleOrDefault()</h1>
     @Model.Content
 </div>

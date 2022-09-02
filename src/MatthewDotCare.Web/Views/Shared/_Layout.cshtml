@@ -2,9 +2,15 @@
 <html lang="en">
 <partial name="~/Views/Partials/Layout/Head.cshtml" />
 <body itemscope itemtype="http://schema.org/WebPage">
-<main>
-    @RenderBody()
-</main>
-<partial name="~/Views/Partials/Layout/Scripts.cshtml" />
+    <main>
+        <partial name="~/Views/Partials/Navigation/MainNavigation.cshtml" />
+        <div class="uk-container uk-margin">
+            @RenderBody()
+            <div class="m-menu uk-hidden@m uk-text-center">
+                <partial name="~/Views/Partials/Navigation/ButtonNavigation.cshtml" />
+            </div>
+        </div>
+    </main>
+    <partial name="~/Views/Partials/Layout/Scripts.cshtml" />
 </body>
 </html>
