@@ -1,8 +1,8 @@
 {
-  "name": "matthew-care-preview",
+  "name": "matthew-care",
   "compatibility_date": "2026-11-21",
   "main": "worker.mjs",
-  "workers_dev": true,
+  "workers_dev": false,
   "no_bundle": true,
   "find_additional_modules": false,
   "assets": {
